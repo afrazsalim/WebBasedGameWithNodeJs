@@ -1,0 +1,63 @@
+
+/* Responsive design */
+@media screen and (max-width: 1100px) {
+	h1 {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+
+	#ending {
+		width: 90vw !important;
+		left: 5vw !important;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	h1 {
+		font-size: 18px;
+	}
+	#rules .rules-list li {
+		font-size: 4vw;
+	}
+
+	#waiting-screen .host-specific label {
+		font-size: 4vw;
+	}
+
+}
+
+
+@media screen and (min-width: 450px) {
+
+	#waiting-screen .invite-code {
+		line-height: 45px;
+	}
+
+}
+
+
+@media screen and (max-width: 400px) {
+
+	#waiting-screen .invite-code {
+		font-size: 4vw;
+	}
+
+}
+
+
+
+@media screen and (max-width: 300px) {
+
+	#rules .rules-list li {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 200px) {
+	h1 {
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,166 @@
+/* FONT SOURCE: https://fonts.google.com/specimen/Amatic+SC */
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	cursor: default;
+	-webkit-tap-highlight-color: transparent;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Titillium Web', sans-serif;
+	min-height: 100vh;
+	background: #c1bdba;
+	background: black;
+}
+
+html {
+	background-color: black;
+	font: normal 16px/1.5 sans-serif;
+	color: #333;
+	overflow: hidden;
+}
+
+body {
+	background: none;
+}
+
+h1 {
+	text-align: center;
+	color: #f0f0f0;
+	font-weight: 300;
+	font-size: 24px;
+	margin: 0 0 15px;
+	padding-top: 15px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 24px;
+	font-weight: 200;
+	margin: 0 0 40px;
+	padding-left: 6px;
+	padding-bottom: 8px;
+	border-bottom: 2px solid #ffffff;
+	color: #ffffff;
+}
+
+h3 {
+	font-size: 32px;
+	color: #2c3e50;
+	margin: 10px 0;
+	text-align: center;
+	padding: 0 20px;
+	margin-bottom: 7px;
+}
+
+a {
+	text-decoration: none;
+	color: #f0f0f0;
+	cursor: pointer;
+	display: inline-block;
+}
+
+i.material-icons {
+	cursor: pointer;
+}
+
+input:not([type=submit]) {
+	cursor: text;
+}
+
+input[type=submit],
+button {
+	cursor: pointer;
+}
+
+.game-title {
+	visibility: hidden;
+	font-family: "Amatic SC", cursive;
+	text-align: center;
+	color: #ffffff;
+	font-weight: 300;
+	font-size: 50px;
+	margin: 0 0 35px;
+}
+
+.game-title.visible {
+	visibility: visible;
+}
+
+#attack {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 2;
+	background-color: transparent;
+	box-shadow: 0px 0px 500px 100px red inset;
+}
+
+#attack.win {
+	box-shadow: 0px 0px 500px 100px green inset;
+}
+
+#attack .attackmessage {
+	display: none;
+	width: fit-content;
+	font-size: 40px;
+	color: red;
+	display: block;
+	padding: 20px 40px;
+	background-color: black;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	border-radius: 4px;
+	border: 1px solid red;
+}
+
+#attack .attackmessage.show {
+	display: block;
+}
+
+#leave-warning {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: black;
+}
+
+#leave-warning .content {
+	width: 80%;
+	height: fit-content;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
+	margin: auto;
+}
+
+#leave-warning .content .title {
+	font-size: 30px;
+	color: red;
+	text-decoration: underline;
+}
+
+#leave-warning .content .warning {
+	color: #f0f0f0;
+	font-size: 20px;
+}

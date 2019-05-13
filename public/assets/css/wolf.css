@@ -1,0 +1,31 @@
+#background-wolf {
+	position: fixed;
+	top: 0;
+	right: -100vw;
+
+	width: 100vw;
+	height: 100%;
+
+	/* IMAGE SOURCE: https://www.nicepng.com/ourpic/u2q8u2y3y3a9u2r5_low-polygon-iced-wolf-by-mxrrrr-dbc180q-wolf/ (FREE TO USE FOR WEBSITE CONTENT LICENCE) */
+	background: url(./../img/wolf_background.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: bottom;
+
+	transition: right ease .5s;
+}
+
+#background-wolf.right-0 {
+	right: 0px;
+}
+
+#background-wolf.always-background {
+	opacity: 0.3;
+}
+
+@media only screen and (max-width: 950px) {
+	#background-wolf {
+		opacity: 0.3;
+	}
+}

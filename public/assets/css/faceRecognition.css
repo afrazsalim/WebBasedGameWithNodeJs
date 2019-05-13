@@ -1,0 +1,106 @@
+/*Face Recognition*/
+#check-face-database {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+.inputs {
+	display: table-row;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.inputs form {
+	display: table-cell;
+	padding: 20px;
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#checkButton {
+	width: auto;
+	padding: 6px 20px;
+	font-size: 22px;
+
+	color: red;
+	background-color: black;
+
+	border: 1px solid red;
+	border-radius: 2px;
+	outline: none;
+
+	transition: background-color ease .25s,
+	color ease .25s;
+}
+
+#checkButton:hover,
+#checkButton:active,
+#checkButton:focus {
+	color: black;
+	background-color: red;
+	cursor: pointer;
+}
+
+#messages {
+	padding: 0px 20px;
+}
+
+#messages div {
+	padding: 8px 25px;
+	border-radius: 4px;
+	background: red;
+}
+
+#table-wrapper {
+	height: 90%;
+	overflow-y: auto;
+}
+
+#table,
+#tables,
+#end-ranking-table,
+#user-table {
+	padding: 5px;
+	width: 100%;
+}
+
+#table tr,
+#tables tr,
+#end-ranking-table tr,
+#user-table tr {
+	font-family: 'Titillium Web', sans-serif;
+	color: white;
+}
+
+#table tr th,
+#tables tr th,
+#end-ranking-table tr th,
+#user-table tr th {
+	border-bottom: 3px red;
+	border-bottom-style: double;
+	padding: 10px;
+	text-align: center;
+	font-size: 18px;
+	position: sticky;
+}
+
+#table tr td,
+#tables tr td,
+#end-ranking-table tr td,
+#user-table tr td {
+	padding: 10px;
+	padding-left: 5%;
+	border-bottom: 1px solid  red;
+}
+/**
+#table #header {
+	position: fixed;
+	width: 100vw;
+	background-color: black;
+}
+*/

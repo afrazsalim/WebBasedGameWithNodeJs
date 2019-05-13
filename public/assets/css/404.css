@@ -1,0 +1,60 @@
+html {
+	background-color: black;
+	color: red;
+	font-family: 'Titillium Web', sans-serif;
+	cursor: default;
+}
+
+.center-block {
+	padding: 0;
+	margin: 0;
+	width: fit-content;
+	height: fit-content;
+	max-width: 259px;
+	transform: translate(-50%, -50%);
+	top: 40%;
+	left: 50%;
+	position: fixed;
+}
+
+.center-block .title {
+	margin: 0;
+	padding: 0;
+	font-size: 60px;
+	font-weight: bold;
+}
+
+.center-block .message {
+	margin: 0;
+	padding: 0;
+	font-size: 25px;
+	margin-bottom: 5px;
+	color: #f0f0f0;
+}
+
+.center-block .back-link {
+	font-size: 20px;
+	color: #f0f0f0;
+}
+
+.center-block .back-link a {
+	color: #f0f0f0;
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.center-block .back-link a:after {
+	content: '';
+	width: 100%;
+	height: 1px;
+	display: block;
+	background: #f0f0f0;
+	transition: 250ms;
+}
+
+.center-block .back-link a:hover:after,
+.center-block .back-link a:active:after,
+.center-block .back-link a:focus:after {
+	width: 0px;
+}

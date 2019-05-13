@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>World of Wolves</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="msapplication-TileColor" content="#000000">
+		<meta name="msapplication-TileImage" content="./assets/icons/favicon.ico">
+		<meta name="theme-color" content="#000000">
+		<meta name="msapplication-navbutton-color" content="#000000">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="icon" type="image/png" href="./assets/icons/favicon.ico">
+
+		<link rel="stylesheet" href="./assets/css/general.css">
+		<link rel="stylesheet" href="./assets/css/login.css">
+		<link rel="stylesheet" href="./assets/css/wolf.css">
+		<link rel="stylesheet" href="./assets/css/GDPR.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+
+	<body>
+		<div id="background-wolf"></div>
+		<div id="form">
+			<div id="tabs">
+				<h1 class="game-title">World of Wolves</h1>
+
+				<div class="signup">
+					<div id="signup-errors" class="form-errors">
+						<h3>There were some errors:</h3>
+						<ul>
+
+						</ul>
+					</div>
+
+					<form id="signup-form" method="POST">
+						<div class="field-wrap">
+							<input type="text" id="signed" name="username" tabindex="1" autocomplete="off" spellcheck="false" required>
+							<label for="username">choose your username</label>
+						</div>
+						<div class="field-wrap">
+							<input type="Password" id="signedup" name="password" tabindex="2" autocomplete="off" spellcheck="false" required>
+							<label for="password">choose your password</label>
+						</div>
+						<label class="gdpr"> <FONT SIZE="2">I read and agreed</FONT>
+							<input type="checkbox" required>
+							<span class="checkmark"></span>
+						</label>
+						<a class="open-policy"> <b> <FONT SIZE="2">WoWs privacy and cookie policy </FONT></b></a>
+						<button type="submit" class="submit" tabindex="3">Sign Up</button>
+					</form>
+
+					<div id="policy" class="policy">
+						<div class="policy-header"><FONT SIZE="4">WoW's Privacy and Coockie Policy</FONT></div>
+						<span class="close">x</span>
+						<div class="policy-container">
+							<ul>
+								<li><FONT SIZE="4">Credentials are remembered to be able to login later.</FONT></li>
+								<li><FONT SIZE="4">Picture’s: you give permission to other players to take pictures and you can take pictures of others.</FONT></li>
+								<li><FONT SIZE="4">Location: this is a necessary part of the game, others can see your location while playing.</FONT></li>
+								<li><FONT SIZE="4">Cookies: in order to improve the game, user statistics are remembered by cookies.</FONT></li>
+							</ul>
+						</div>
+					</div>
+					<br>
+					<a href="#" id="switch-to-login-button"><b>Login</b> if you have an account</a>
+				</div>
+
+				<div class="login">
+					<div id="login-errors" class="form-errors">
+						<h3>There were some errors:</h3>
+						<ul>
+
+						</ul>
+					</div>
+					<form id="login-form" method="POST">
+						<div class="field-wrap">
+							<input type="text" id="username" name="username" tabindex="1" autocomplete="off" spellcheck="false" required>
+							<label for="logged">username</label>
+						</div>
+						<div class="field-wrap">
+							<input type="Password" id="password" name="password" tabindex="2" autocomplete="off" spellcheck="false" required>
+							<label for="passed">password</label>
+						</div>
+						<button class="submit" type="submit" tabindex="3">Login</button>
+					</form>
+					<br>
+					<a href="#" id="switch-to-signup-button"><b>Sign up</b> if you don't have an account yet!</a>
+				</div>
+				<br>
+				<p id="capslock"> <i class="material-icons">warning</i>Caps lock is ON.</p>
+			</div>
+
+			<div id="copyright" class="copyright">
+				<p>P&O CW Team 4 &copy; 2018-2019<p>
+			</div>
+		</div>
+		<div id="flashMessage"></div>
+	</body>
+
+	<script src="./assets/js/external/jquery-3.3.1.min.js"></script>
+	<script src="./assets/js/login.js"></script>
+</html>

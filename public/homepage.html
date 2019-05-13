@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>World of Wolves</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="msapplication-TileColor" content="#000000">
+		<meta name="msapplication-TileImage" content="./assets/icons/favicon.ico">
+		<meta name="theme-color" content="#000000">
+		<meta name="msapplication-navbutton-color" content="#000000">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="icon" type="image/png" href="./assets/icons/favicon.ico">
+
+		<link rel="stylesheet" href="./assets/css/general.css">
+		<link rel="stylesheet" href="./assets/css/style_2.css">
+		<link rel="stylesheet" href="./assets/css/style.css">
+		<link rel="stylesheet" href="./assets/css/styles.css">
+		<link rel="stylesheet" href="./assets/css/waiting_screen.css">
+		<link rel="stylesheet" href="./assets/css/room_selection.css">
+		<link rel="stylesheet" href="./assets/css/external/ol.css">
+		<link rel="stylesheet" href="./assets/css/wolf.css">
+		<link rel="stylesheet" href="./assets/css/map.css">
+		<link rel="stylesheet" href="./assets/css/faceRecognition.css">
+		<link rel="stylesheet" href="./assets/css/ending.css">
+		<link rel="stylesheet" href="./assets/css/responsive_design.css">
+		<!--
+		<link rel="stylesheet" href="./deliverableMY/MY1.css">
+	-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+
+	<body class="home Page">
+		<button id="menu-toggle" title="toggle the menu"><i class="material-icons">menu</i></button>
+		<div id="menu">
+			<div id="timer"></div>
+			<p id=score> Score </p> <p id="lives">0</p>
+			<br>
+			<ul>
+				<li id="map-button"><i class="material-icons">map</i>Map</li>
+				<!-- <li id="database-button"><i class="material-icons">person</i>Check</li> -->
+				<li id="rules-button"><i class="material-icons">list</i>Rules</li>
+				<li id="ranking-button"><i class="material-icons">star</i>Ranking</li>
+				<!--<li id="message-button"><i class="material-icons">message</i>Messages</li>-->
+				<li id="logout-button">Logout</li>
+			</ul>
+		</div>
+
+		<div id="speech-container">
+			<button id="speech-button" title="Record a command"><i class="material-icons">mic</i></button>
+			<span id="speech-command"><em>Speak now</em></span>
+			<span id="speech-result"></span>
+			<button id="speech-abort" title="Abort the command"><i class="material-icons">close</i></button>
+			<div id="progress-bar"></div>
+		</div>
+
+		<div id="bg"></div>
+		<div id="attack"><div class="attackmessage"></div></div>
+
+		<div id="waiting-screen">
+			<h1 class="game-title" style="visibility: unset;">World of Wolves</h1>
+
+			<div id="spinner">
+				<i class="spinner material-icons">settings</i>
+			</div>
+
+			<p class="explanation-player">
+				The leader is configuring the game<br>
+				He will decide when the game starts.
+			</p>
+
+			<p class="explanation-host host-specific">
+				You're the host!<br>
+				Configure the game below and start the game when you're done.
+			</p>
+
+			<p><br>In the meantime, check out the rules:</p>
+			<ul class="rules-list">
+				<li>Walk around the map and try to spot enemy wolves.</li>
+				<li>Ask the enemy wolf if he or she plays the game.</li>
+				<li>The wolf who spotted the other first can now take a picture.</li>
+				<li>You just earned points!</li>
+				<li><b>Watch out!</b> If you close the tab or reload the page, you will be removed from the current game!</li>
+			</ul>
+			<form action="#" class="host-specific">
+				<div class="field-wrap">
+					<input type="text" name="usr-time" class="timeInput" id="timeInput" autocomplete="off" spellcheck="false" required="true">
+					<label for="timeInput">Choose a duration (MM:SS)</label>
+				</div>
+
+				<div class="invite-code">Share this code to invite users<span class="room-invite-code"></span></div>
+				<table id="user-table">
+					<tr id="header">
+						<th>Username</th>
+						<th>Location received</th>
+						<th>Delete user</th>
+					</tr>
+				</table>
+				<br>
+				<button type="submit" id="button-start-game" class="submit" tabindex="1">Start the game</button>
+			</form>
+		</div>
+
+			<!--ROOM SELECTOR-->
+			<div id="room-selection-screen">
+				<h1>Select the room you wish to join:</h1>
+				<div class="room-selections">
+					<div class="option selected" data-room-name="1">
+						<span class="selection-icon"><i class="material-icons">check_circle</i></span>
+						<span class="title">Room 1</span>
+						<span class="number-of-players"></span>
+					</div>
+					<div class="option" data-room-name="2">
+						<span class="selection-icon"><i class="material-icons">check_circle</i></span>
+						<span class="title">Room 2</span>
+						<span class="number-of-players"></span>
+					</div>
+					<div class="option" data-room-name="3">
+						<span class="selection-icon"><i class="material-icons">check_circle</i></span>
+						<span class="title">Room 3</span>
+						<span class="number-of-players"></span>
+					</div>
+					<div class="option" data-room-name="4">
+						<span class="selection-icon"><i class="material-icons">check_circle</i></span>
+						<span class="title">Room 4</span>
+						<span class="number-of-players"></span>
+					</div>
+					<div class="option" data-room-name="invite">
+						<span class="selection-icon"><i class="material-icons">check_circle</i></span>
+						<span class="title">I have an invite</span>
+						<div class="field-wrap">
+							<input id="invite-code" name="invite-code" type="number" autocomplete="off" spellcheck="false">
+							<label for="invite-code">Invite code</label>
+						</div>
+					</div>
+					<div class="option unselectable" data-room-name="create">
+						<span class="selection-icon"><i class="material-icons">check_circle</i></span>
+						<span class="title">Create a room</span>
+						<div class="field-wrap">
+							<input id="room-name" name="room-name" type="text" autocomplete="off" spellcheck="false">
+							<label for="room-name">Enter a name</label>
+						</div>
+					</div>
+					<button id="select-room">Select this room</button>
+				</div>
+			</div>
+
+		<!-- CHECK AGAINST DATABASE -->
+		<div id="check-face-database" style="display:none;">
+			<div class="inputs">
+				<form id="check-form" action="#">
+					<input tabindex="5" type="button" id="checkButton" value="Check face against database">
+				</form>
+			</div>
+
+			<div id="messages"></div>
+
+			<div id="table-wrapper">
+				<table id="table">
+					<tr id="header">
+						<th>Username</th>
+						<th>Match score</th>
+					</tr>
+					<tr id="placeholder">
+						<td>-</td>
+						<td>-</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- CAMERA -->
+		<div id="camera" style="display:none;">
+			<div class="app">
+				<a href="#" id="switch-camera" class="inactive" title="Switch camera"><i class="material-icons">camera_rear</i></a>
+				<a href="#" id="abort-camera" class="disabled" title="Close the camera"><i class="material-icons">close</i></a>
+				<a href="#" id="accept-camera" class="disabled" title="Take an image"><i class="material-icons">photo_camera</i></a>
+				<video muted id="camera-stream" autoplay></video>
+				<img id="snap">
+
+				<p id="error-message"><i class="material-icons">error_outline</i><span class="text"></span></p>
+
+				<canvas></canvas>
+			</div>
+		</div>
+
+		<!--LOADING-->
+		<div id="loading">
+			<div id="spinner">
+				<i class="spinner material-icons">settings</i>
+			</div>
+		</div>
+
+		<!-- LEAVE WARNING -->
+		<div id="leave-warning">
+			<div class="content">
+				<h1 class="game-title visible">World of Wolves</h1>
+				<div class="title">Before you go...</div>
+				<p class="warning">
+					If you close this tab or reload the page, you will be logged out of the game!
+					Your progress will be lost and you will not be able to join this particular game again.
+				</p>
+			</div>
+		</div>
+
+		<!-- MAP -->
+		<div id= "map" class= "map">
+			<div id = "log" class= "log"></div>
+			<!-- <div id="menu-toggle"><i class="material-icons">menu</i></div> -->
+			<div id="camera-button"><i class="material-icons">camera_alt</i></div>
+		</div>
+
+		<!--RULES -->
+		<div id="rules" style="display:none;">
+			<div id="background-wolf" class="always-background right-0"></div>
+			<h1 class="game-title" style="visibility:unset;">World of Wolves</h1>
+			<h2>Game Rules</h2>
+			<ul class="rules-list">
+				<li>Walk around the map and try to spot enemy wolves.</li>
+				<li>Ask the enemy wolf if he or she plays the game.</li>
+				<li>The wolf who spotted the other first can now take a picture.</li>
+				<li>You just earned points!</li>
+				<li><b>Watch out!</b> If you close the tab or reload the page, you will be removed from the current game!</li>
+			</ul>
+		</div>
+
+		<!-- RANKING -->
+		<div id="ranking" style="display:none;">
+			<div id="background-wolf" class="always-background right-0"></div>
+			<h1 class="game-title" style="visibility:unset;">World of Wolves</h1>
+			<h2> Game Ranking </h2>
+			<table id="tables">
+				<tr id="header">
+					<th>Username</th>
+					<th>Score</th>
+				</tr>
+				<tr id="placeholder">
+					<td>-</td>
+					<td>-</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- ENDING -->
+		<div id="ending" style="display:none;">
+			<h1 class="game-title" style="visibility:unset;margin:0 0 20px;">World of Wolves</h1>
+			<h2> Ranking </h2>
+
+			<table id="end-ranking-table">
+				<tr id="header">
+					<th>Username</th>
+					<th>Score</th>
+				</tr>
+				<tr id="placeholder">
+					<td>-</td>
+					<td>-</td>
+				</tr>
+			</table>
+
+			<div id="log_out">
+				<button id="log_out-button"> Logout </button>
+			</div>
+		</div>
+		<!--
+
+		<div id="my" style="display:none;">
+			<div id="mission">Target point is <div id="mission_loc">'location'</div>. Go there and take a characteristic picture of the spot.
+				<script>
+					var random = Math.floor(Math.random()*3); //return random integer from 0 to 3
+					var mission = document.getElementById("mission_loc");
+					switch(random){
+						case 0:
+							mission.innerHTML="Arenberg Castle";
+							break;
+						case 1:
+							mission.innerHTML="Theokot";
+							break;
+						case 2:
+							mission.innerHTML="Central station of Leuven";
+							break;
+					}
+				</script>
+			</div>
+			<div id="responses">
+			</div>
+			<div id="camera-button2"><i class="material-icons">camera_alt</i></div>
+		</div>
+	-->
+
+
+		<script src="./assets/js/external/jquery-3.3.1.min.js"></script>
+		<script src="./assets/js/external/socket.io.js"></script>
+		<script src="./assets/js/external/face-api.js"></script>
+		<script src="./assets/js/external/ol.js"></script>
+		<script src="./assets/js/ui_actions.js" type="module"></script>
+		<script src="./assets/js/server_requests.js" type="module"></script>
+		<script src="./assets/js/ui.js" type="module"></script>
+		<script src="./assets/js/geolocation.js" type="module"></script>
+		<script src="./assets/js/main.js" type="module"></script>
+		<script src="./assets/js/face_processing.js" type="module"></script>
+		<script src="./assets/js/camera.js" type="module"></script>
+		<script src="./assets/js/server_response.js" type="module"></script>
+		<script src="./assets/js/MY1_app.js" type="module"></script>
+		<!--
+		<script src="./deliverableMY/camera.js" type="module"></script>
+		<script src="./deliverableMY/MY1.js" type="module"></script>
+	-->
+	</body>
+</html>

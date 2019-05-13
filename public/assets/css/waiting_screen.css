@@ -1,0 +1,180 @@
+#home {
+	display: none !important;
+}
+
+.gameTitle {
+	display: none;
+	z-index: 10;
+}
+
+#waiting-screen {
+	position: fixed;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	padding: 40px 60px;
+	background-color: black;
+	color: #f0f0f0;
+	text-align: center;
+
+	border-radius: 2px;
+
+	overflow: scroll;
+	z-index: 11;
+
+	-webkit-transition: top .3s ease;
+	-o-transition: top .3s ease;
+	transition: top .3s ease;
+}
+
+#waiting-screen.top-0 {
+	top: 0;
+}
+
+#waiting-screen::-webkit-scrollbar {
+	display: none;
+}
+
+#waiting-screen .game-title {
+	font-family: 'Amatic SC', cursive;
+	font-size: 70px;
+	margin: 0 0 40px;
+}
+
+#waiting-screen .explanation-player,
+#waiting-screen .explanation-host {
+	font-size: 20px;
+	color: #f0f0f0;
+}
+
+#waiting-screen .host-specific {
+	display: none;
+}
+
+#spinner {
+	text-align: center;
+	position: relative;
+	transform: translateY(-50%);
+}
+
+#waiting-screen #spinner .spinner {
+	font-size: 60px !important;
+	color: #f0f0f0;
+}
+
+#waiting-screen button.submit {
+	width: 100%;
+	padding: 6px 0px;
+	font-size: 22px;
+
+	color: red;
+	background-color: black;
+
+	border: 1px solid red;
+	border-radius: 2px;
+	outline: none;
+
+	transition: background-color ease .25s,
+	color ease .25s;
+}
+
+#waiting-screen button.submit:hover,
+#waiting-screen button.submit:active,
+#waiting-screen button.submit:focus {
+	color: black;
+	background-color: red;
+}
+
+#waiting-screen .invite-code {
+	text-transform: uppercase;
+	padding: 0px 20px;
+	border: 1px solid red;
+	position: relative;
+	height: fit-content;
+	/*line-height: 45px;*/
+	font-size: 16px;
+	text-align: left;
+	border-radius: 2px;
+}
+
+#waiting-screen .invite-code .room-invite-code {
+	border-left: 1px solid red;
+	position: absolute;
+	right: 0;
+	top: -1px;
+	height: 102%;
+	line-height: 45px;
+	padding: 0 15px;
+	font-size: 24px;
+}
+
+#waiting-screen input {
+	display: block;
+	font-size: 22px;
+
+	width: 100%;
+	padding: 4px 0px;
+
+	color: red;
+	background: none;
+	background-image: none;
+
+	border-width: 0;
+	border-color: red;
+	border-bottom-width: 2px;
+	outline: none;
+
+	position: relative;
+	padding: 10px 14px 8px;
+
+	border: 1px solid red;
+	border-radius: 2px;
+}
+
+#waiting-screen .field-wrap {
+	position: relative;
+	margin: 20px 0;
+}
+
+#waiting-screen input + label {
+	position: absolute;
+	top: 50%;
+	left: 13px;
+	transform: translate(0, -50%);
+	font-size: 20px;
+
+	color: red;
+	background-color: inherit;
+
+	text-transform: capitalize;
+	pointer-events: none;
+
+	transition: top .25s ease,
+	font-size .25s ease,
+	background-color;
+}
+
+#waiting-screen input:focus + label,
+#waiting-screen input.has-content + label {
+	position: absolute;
+	top: 1px;
+	left: 8px;
+	font-size: 10px;
+
+	padding: 0 5px;
+
+	color: red;
+	background-color: black;
+
+	border-radius: 2px;
+
+	text-transform: uppercase;
+}
+
+#waiting-screen .rules-list {
+	text-align: left;
+	width: 90%;
+	margin: auto;
+}

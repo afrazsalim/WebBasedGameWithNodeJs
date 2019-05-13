@@ -1,0 +1,230 @@
+
+.transparent {
+	background: transparent;
+	min-height: unset !important;
+}
+
+.disabled {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+#bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background: black;
+	z-index: 4;
+}
+
+/* Menu */
+#menu-toggle {
+	background-color: black;
+	border: 1px solid red;
+	width: 56px;
+	height: 56px;
+	border-radius: 80px;
+	text-align: center;
+	position: fixed;
+	left: 16px;
+	bottom: 16px;
+	outline: none;
+	z-index: 10;
+	padding: 0;
+	transition: background-color .3s ease;
+}
+
+#menu-toggle:hover,
+#menu-toggle:active,
+#menu-toggle.active {
+	background-color: red;
+}
+
+#menu-toggle.active:hover,
+#menu-toggle.active:active {
+	background-color: black;
+}
+
+#menu-toggle i {
+	padding: 0;
+	font-size: 24px;
+	line-height: 56px;
+	cursor: pointer;
+}
+
+#menu {
+	position: fixed;
+	top: 0;
+	padding-top: 80px;
+	height: 100%;
+	background: black;
+	left: -350px;
+	width: 300px;
+	box-shadow: 0px 0px 4px 0px red;
+	border-right: 1px solid red;
+	z-index: 9;
+	overflow-y: scroll;
+	transition: left .5s ease;
+}
+
+#menu::-webkit-scrollbar {
+	display: none;
+}
+
+#menu ul li {
+	list-style: none;
+	text-align: center;
+	padding: 24px;
+	border-bottom: 1px solid red;
+	cursor: pointer;
+	font-size: 22px;
+	color: #f0f0f0;
+	background-color: black;
+	transition: background-color .3s ease;
+}
+
+#menu ul li:hover,
+#menu ul li:active {
+	background-color: red;
+}
+
+#menu ul li:first-child {
+	border-top: 1px solid red;
+}
+
+#menu.show {
+	left: 0;
+}
+
+/*Game Rules*/
+/*
+.game-rules {
+	list-style-type: decimal;
+	padding-left: 5%;
+	text-align: left;
+}
+*/
+
+.forgot {
+	margin-top: -20px;
+	text-align: right;
+}
+
+#checkButton {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#ranking {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+#rules {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+
+#rules .rules-list {
+	text-align: left;
+	width: 90%;
+	margin: auto;
+	color: #f0f0f0;
+}
+
+#rules .rules-list li {
+	font-size: 20px;
+}
+
+
+/*Lives on screen*/
+#heart-image {
+	position: absolute;
+	max-width: 50px;
+	width: 7%;
+	height: auto;
+	top: 65px;
+	left: 220px;
+	z-index: 10;
+}
+
+#lives {
+	position: absolute;
+	top: 60px;
+	left: 160px;
+	z-index: 10;
+	font-size: 22px;
+	font-weight: 300px;
+	color: white;
+}
+
+#score {
+	position: absolute;
+	top: 60px;
+	left: 95px;
+	z-index: 10;
+	font-size: 22px;
+	font-weight: 300px;
+	color: white;
+}
+
+/*Time on screen */
+#timer {
+	position: absolute;
+	top: 24px;
+	left: 95px;
+	z-index: 10;
+	font-size: 22px;
+	font-weight: 100px;
+	color: white;
+}
+
+
+/*slider frequency update host*/
+.slider {
+	-webkit-appearance: none;
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 25px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: red;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: red;
+	cursor: pointer;
+}
+
+/* Time limit input host */
+.timeInput {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}

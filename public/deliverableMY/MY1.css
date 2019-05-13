@@ -1,0 +1,379 @@
+#my {
+	position: fixed;
+	height:100%;
+	width:100%;
+	z-index:5;
+}
+
+/*Mission*/
+#mission {
+	border: 2px solid red;
+	border-radius: 12px;
+	width:40%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	color: white;
+	padding: 1%;
+	text-align: center;
+}
+
+#mission_loc {
+	display: inline;
+	text-decoration: underline;
+}
+
+/*Responses*/
+#responses {
+	overflow-y: auto;
+}
+
+/* Camera */
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/MaterialIcons-Regular.woff2) format('woff2');
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	vertical-align: middle;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	padding-right: 5px;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
+#camera-button2 {
+	width: 56px;
+	height: 56px;
+	background: red;
+	border-radius: 80px;
+	color: white;
+	text-align: center;
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	vertical-align: middle;
+	z-index: 10;
+	cursor: pointer;
+
+	transition: width .1s ease,
+	height .1s ease,
+	bottom .1s ease,
+	right .1s ease;
+}
+
+#camera-button2 :hover {
+	width: 60px;
+	height: 60px;
+	bottom: 14px;
+	right: 14px;
+}
+
+#camera-button2  i {
+	font-size: 24px;
+	line-height: 56px;
+	padding: 0;
+
+	transition: line-height .1s ease;
+}
+
+#camera-button2:hover i {
+	line-height: 60px;
+}
+
+#camera {
+	z-index: 100;
+	position: fixed;
+}
+
+.app {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: black;
+}
+
+.app #start-camera{
+	display: none;
+	border-radius: 3px;
+	max-width: 400px;
+	color: #fff;
+	background-color: #448AFF;
+	text-decoration: none;
+	padding: 15px;
+	opacity: 0.8;
+	margin: 50px auto;
+	text-align: center;
+}
+
+.app #accept-camera {
+	width: 56px;
+	height: 56px;
+	position: fixed;
+	left: 16px;
+	bottom: 16px;
+	border-radius: 80px;
+	text-align: center;
+	z-index: 106;
+	background-color: green;
+	color: black;
+	transition: none;
+
+	transition: width .1s ease,
+	height .1s ease,
+	bottom .1s ease,
+	left .1s ease;
+}
+
+.app #switch-camera {
+	width: 56px;
+	height: 56px;
+	position: fixed;
+	left: 88px;
+	bottom: 16px;
+	border-radius: 80px;
+	text-align: center;
+	z-index: 106;
+	background-color: green;
+	color: black;
+	transition: none;
+
+	transition: width .1s ease,
+	height .1s ease,
+	bottom .1s ease,
+	left .1s ease;
+}
+
+.app #abort-camera {
+	width: 56px;
+	height: 56px;
+	position: fixed;
+	right: 16px;
+	bottom: 16px;
+	border-radius: 80px;
+	text-align: center;
+	z-index: 106;
+	background-color: red;
+	color: white;
+	transition: none;
+
+	transition: width .1s ease,
+	height .1s ease,
+	bottom .1s ease,
+	right .1s ease;
+}
+
+.app #accept-camera:hover {
+	width: 60px;
+	height: 60px;
+	bottom: 14px;
+	left: 14px;
+}
+
+.app #switch-camera:hover {
+	width: 60px;
+	height: 60px;
+	bottom: 14px;
+	left: 86px;
+}
+
+.app #abort-camera:hover {
+	width: 60px;
+	height: 60px;
+	bottom: 14px;
+	right: 14px;
+}
+
+.app #abort-camera i,
+.app #switch-camera i,
+.app #accept-camera i {
+	font-size: 24px;
+	line-height: 56px;
+	padding: 0;
+
+	transition: line-height .1s ease;
+}
+
+.app #abort-camera:hover i,
+.app #switch-camera:hover i,
+.app #accept-camera:hover i {
+	line-height: 60px;
+}
+
+.app a.red,
+.app a.red:hover {
+	background-color: red !important;
+	color: white !important;
+}
+
+.app a.inactive,
+.app a.inactive:hover {
+	opacity: 0.3;
+	background-color: grey !important;
+	pointer-events: none;
+}
+
+.app video#camera-stream {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+
+	/* display: none; */
+}
+
+.app img#snap{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: auto;
+	height: auto;
+	z-index: 103;
+	max-height: 100vh;
+	max-width: 100vw;
+	display: none;
+	margin: auto;
+}
+
+.app #error-message {
+	position: absolute;
+	top: 0;
+	width: 500px;
+	z-index: 120;
+	max-width: 100vw;
+	color: white;
+	font-size: 20px;
+	background: red;
+	border-radius: 0 0 4px 4px;
+	padding: 10px 15px;
+	text-align: center;
+	margin-left: calc(50vw - 250px);
+	display: none;
+}
+
+.app #error-message .text {
+	font-size: inherit;
+	vertical-align: middle;
+}
+
+.app canvas{
+	position: relative;
+	transform: translateY(-100%);
+	width: auto;
+	height: auto;
+	z-index: 105;
+	max-height: 100vh;
+	max-width: 100vw;
+	margin: auto;
+	display: block;
+}
+
+.app video#camera-stream.visible,
+.app img#snap.visible,
+.app #error-message.visible
+{
+	display: block;
+}
+
+.app .controls.visible{
+	display: -webkit-flex;
+	display: flex;
+}
+
+#loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
+	display: none;
+	z-index: 200;
+}
+
+#loading #spinner {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.spinner {
+	padding: 0;
+	font-size: 100px !important;
+	color: white;
+
+	-webkit-animation-name: spin;
+	-webkit-animation-duration: 4000ms;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: spin;
+	-moz-animation-duration: 4000ms;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: spin;
+	-ms-animation-duration: 4000ms;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+
+	animation-name: spin;
+	animation-duration: 4000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@-ms-keyframes spin {
+	from { -ms-transform: rotate(0deg); }
+
+	to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+	from { -moz-transform: rotate(0deg); }
+
+	to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+	from { -webkit-transform: rotate(0deg); }
+
+	to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Responsive webdesign */
+@media(max-width: 1000px) {
+	.app #start-camera.visible {
+		display: block;
+	}
+
+	.app .controls a i {
+		font-size: 16px;
+	}
+
+	.app .controls #take-photo i {
+		font-size: 24px;
+	}
+}
