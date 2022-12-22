@@ -24,7 +24,7 @@
     "hashmap": "^2.3.0",
     "hbs": "^4.0.1",
     "https": "^1.0.0",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.3.6",
     "requirejs": "^2.3.6",
     "socket.io": "^2.1.1",
